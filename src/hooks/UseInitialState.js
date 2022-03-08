@@ -3,7 +3,6 @@ import {collection, addDoc, getDocs, updateDoc, doc, query, where, deleteDoc} fr
 
 import db from '../firebase';
 
-
     const initialstate ={ 
         register: []
     }
@@ -19,7 +18,6 @@ const UseInitialState = () =>{
     },[]);
 
     const getData = async () =>{
-
         const datos = await getDocs(collection(db,'crudregistro'));
             setRegister({ register: [datos]});
     }
@@ -30,7 +28,6 @@ const UseInitialState = () =>{
         setQuery({name: data.docs[0].data().Nombre,secondName: data.docs[0].data().Apellido});
     }
     
-
     const create = async (register) => {
         try{
              await addDoc(collection(db,'crudregistro'),register);
@@ -52,7 +49,6 @@ const UseInitialState = () =>{
     }
 
     const deleteRegister = async(id) =>{
-        console.log(id);
         await deleteDoc(doc(db, "crudregistro", id));
         alert('Registro Eliminado Con Exito');
     }

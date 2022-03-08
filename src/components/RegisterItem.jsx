@@ -2,6 +2,7 @@ import React from "react";
 import AppContext from '../context/AppContext'
 
 const array = [];
+
 const RegisterItem = ({data}) =>{
     const {processArray} = React.useContext(AppContext);
     const componentStyle ={
@@ -12,7 +13,6 @@ const RegisterItem = ({data}) =>{
     const handlerClick = (id) =>{
         setStyle(componentStyle);
 
-        //array.filter(e => e === id) ? array.find(id,1):array.push(id);
         const valor = array.find(e => e === id);
         if(valor === undefined){ 
              array.push(id)
